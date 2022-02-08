@@ -19,7 +19,7 @@ namespace HttpHmacAuthentication.AspnetCore
         private const string LineBreak = "\n";
         private const string Version = "2.0";
 
-        private static readonly TimeSpan maxTimeOffset = TimeSpan.FromSeconds(30);
+        private static readonly TimeSpan maxTimeOffset = TimeSpan.FromSeconds(900);
 
         public HmacAuthenticationHandler(IOptionsMonitor<HmacAuthenticationSchemeOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock) : base(options, logger, encoder, clock)
         {
@@ -31,6 +31,12 @@ namespace HttpHmacAuthentication.AspnetCore
             {
                 Logger.LogInformation("Http request does not contain Aurhorization header");
                 return Task.FromResult(AuthenticateResult.Fail("Header not found"));
+            }
+
+            if (Request.Headers.TryGetValue("X-Authenticated-Id", out var authenticatedId))
+            {
+                Logger.LogInformation("Illegal header X-Authenticated-Id");
+                return Task.FromResult(AuthenticateResult.Fail($"X-Authenticated-Id header not allowed, Value {authenticatedId}"));
             }
 
             var header = Request.Headers[HeaderNames.Authorization].ToString();
