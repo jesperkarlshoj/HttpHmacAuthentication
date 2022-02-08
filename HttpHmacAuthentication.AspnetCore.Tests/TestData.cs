@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace HttpHmacAuthentication.Tests
+namespace HttpHmacAuthentication.AspnetCore.Tests
 {
     public static class TestData
     {
