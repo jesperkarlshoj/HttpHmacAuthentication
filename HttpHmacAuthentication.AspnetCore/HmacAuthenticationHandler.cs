@@ -33,7 +33,7 @@ namespace HttpHmacAuthentication.AspnetCore
                 return Task.FromResult(AuthenticateResult.Fail("Header not found"));
             }
 
-            if (Request.Headers.TryGetValue("X-Authenticated-Id", out var authenticatedId))
+            if (Request.Headers.TryGetValue(HmacHeaderNames.AuthenticatedId, out var authenticatedId))
             {
                 Logger.LogInformation("Illegal header X-Authenticated-Id");
                 return Task.FromResult(AuthenticateResult.Fail($"X-Authenticated-Id header not allowed, Value {authenticatedId}"));

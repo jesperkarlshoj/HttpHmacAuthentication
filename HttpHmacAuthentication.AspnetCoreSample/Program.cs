@@ -9,10 +9,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication(
-    options => options.DefaultScheme = AuthSchemeConstants.MyNinjaAuthScheme)
-    .AddScheme<MyNinjaAuthSchemeOptions, MyNinjaAuthHandler>(
-        AuthSchemeConstants.MyNinjaAuthScheme, options => { });
+//builder.Services.AddAuthentication(
+//    options => options.DefaultScheme = AuthSchemeConstants.MyNinjaAuthScheme)
+//    .AddScheme<MyNinjaAuthSchemeOptions, MyNinjaAuthHandler>(
+//        AuthSchemeConstants.MyNinjaAuthScheme, options => { });
 
 
 var app = builder.Build();

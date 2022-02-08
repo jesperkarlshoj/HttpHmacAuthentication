@@ -6,12 +6,12 @@ using Moq;
 using NUnit.Framework;
 using System;
 using System.IO;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HttpHmacAuthentication.AspnetCore.Tests
 {
+
     public class HmacAuthenticationHandlerTest
     {
 
@@ -50,7 +50,7 @@ namespace HttpHmacAuthentication.AspnetCore.Tests
         {
             clock.Setup(x => x.UtcNow).Returns(DateTimeOffset.FromUnixTimeSeconds(fixture.Input.Timestamp));
 
-            var context = SetupContext(fixture);
+            var context = HttpContextInitializer.SetupContext(fixture);
             var result = await Authenticate(context, fixture.Input.Secret);
 
 
@@ -63,7 +63,7 @@ namespace HttpHmacAuthentication.AspnetCore.Tests
             clock.Setup(x => x.UtcNow).Returns(DateTime.UtcNow);
             var fixture = fixtures[0];
 
-            var context = SetupContext(fixture);
+            var context = HttpContextInitializer.SetupContext(fixture);
             var result = await Authenticate(context, fixture.Input.Secret);
 
 
@@ -76,7 +76,7 @@ namespace HttpHmacAuthentication.AspnetCore.Tests
             var fixture = fixtures[0];
             clock.Setup(x => x.UtcNow).Returns(DateTimeOffset.FromUnixTimeSeconds(fixture.Input.Timestamp));
 
-            var context = SetupContext(fixture);
+            var context = HttpContextInitializer.SetupContext(fixture);
             context.Request.Headers.Add("X-Authenticated-Id", "123");
 
             var result = await Authenticate(context, fixture.Input.Secret);
@@ -84,34 +84,7 @@ namespace HttpHmacAuthentication.AspnetCore.Tests
             Assert.That(result.Succeeded, Is.False);
         }
 
-        private DefaultHttpContext SetupContext(Fixture fixture)
-        {
-
-
-            var context = new DefaultHttpContext();
-            context.Request.Method = fixture.Input.Method;
-            context.Request.Host = new HostString(fixture.Input.Host);
-            context.Request.Path = new Uri(fixture.Input.Url).AbsolutePath;
-            context.Request.QueryString = new QueryString(new Uri(fixture.Input.Url).Query);
-            context.Request.Headers.Add("X-Authorization-Timestamp", fixture.Input.Timestamp.ToString());
-            context.Request.Headers.Add("Authorization", fixture.Expectations.AuthorizationHeader);
-
-
-            foreach (var header in fixture.Input.Headers)
-            {
-                context.Request.Headers.Add(header.Key, header.Value);
-            }
-
-            if (!string.IsNullOrEmpty(fixture.Input.ContentBody))
-            {
-                var stream = new MemoryStream(Encoding.UTF8.GetBytes(fixture.Input.ContentBody));
-                context.Request.Body = stream;
-                context.Request.Headers.Add("Content-Type", fixture.Input.ContentType);
-                context.Request.ContentLength = stream.Length;
-            }
-
-            return context;
-        }
+     
 
         private async Task<AuthenticateResult> Authenticate(DefaultHttpContext context, string secret)
         {
