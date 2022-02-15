@@ -29,3 +29,17 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: ./HttpHmacAuthentication.Tests/TestResults/coverage.info   
+        flag-name: HttpHmacAuthentication.Tests
+        parallel: true
+    - name: Publish coverage report to coveralls.io
+      uses: coverallsapp/github-action@v1.1.2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./HttpHmacAuthentication.AspnetCore.Tests/TestResults/coverage.info    
+        flag-name: HttpHmacAuthentication.AspnetCore.Tests
+        parallel: true
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@v1.1.2
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
