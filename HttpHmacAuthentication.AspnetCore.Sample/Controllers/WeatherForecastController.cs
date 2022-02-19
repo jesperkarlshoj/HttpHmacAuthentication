@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace HttpHmacAuthentication.AspnetCoreSample.Controllers
+namespace HttpHmacAuthentication.AspnetCore.Sample.Controllers
 {
     [ApiController]
     [Route("[controller]")]

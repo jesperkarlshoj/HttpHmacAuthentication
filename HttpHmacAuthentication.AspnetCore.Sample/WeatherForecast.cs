@@ -1,4 +1,4 @@
-namespace HttpHmacAuthentication.AspnetCoreSample
+namespace HttpHmacAuthentication.AspnetCore.Sample
 {
     public class WeatherForecast
     {

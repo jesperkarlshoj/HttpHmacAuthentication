@@ -1,4 +1,4 @@
-﻿namespace HttpHmacAuthentication.Tests
+﻿namespace HttpHmacAuthentication.HttpClient.Tests
 {
     public class StubNonceProvider : INonceProvider
     {

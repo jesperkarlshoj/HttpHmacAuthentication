@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HttpHmacAuthentication\HttpHmacAuthentication.csproj" />
+    <ProjectReference Include="..\HttpHmacAuthentication.HttpClient\HttpHmacAuthentication.HttpClient.csproj" />
   </ItemGroup>
 
 </Project>

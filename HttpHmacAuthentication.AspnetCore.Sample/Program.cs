@@ -1,4 +1,4 @@
-using HttpHmacAuthentication.AspnetCore;
+using HttpHmacAuthentication.AspnetCore.Sample;
 
 var builder = WebApplication.CreateBuilder(args);
 
