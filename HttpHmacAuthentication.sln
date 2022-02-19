@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication.HttpClient", "HttpHmacAuthentication.HttpClient\HttpHmacAuthentication.HttpClient.csproj", "{5E5FFDBD-24BC-4E14-B857-F8ABEB7E2971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication", "HttpHmacAuthentication\HttpHmacAuthentication.csproj", "{5E5FFDBD-24BC-4E14-B857-F8ABEB7E2971}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication.HttpClient.Tests", "HttpHmacAuthentication.HttpClient.Tests\HttpHmacAuthentication.HttpClient.Tests.csproj", "{288EB6BA-718A-4E7A-9445-1B8635D93BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication.Tests", "HttpHmacAuthentication.Tests\HttpHmacAuthentication.Tests.csproj", "{288EB6BA-718A-4E7A-9445-1B8635D93BD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHmacAuthentication.AspnetCore", "HttpHmacAuthentication.AspnetCore\HttpHmacAuthentication.AspnetCore.csproj", "{2B692E9C-D014-4392-A44B-0C72AE8EA277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication.AspnetCore", "HttpHmacAuthentication.AspnetCore\HttpHmacAuthentication.AspnetCore.csproj", "{2B692E9C-D014-4392-A44B-0C72AE8EA277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHmacAuthentication.AspnetCore.Sample", "HttpHmacAuthentication.AspnetCore.Sample\HttpHmacAuthentication.AspnetCore.Sample.csproj", "{9CDD8369-6B43-4258-AB37-016295F3F28E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication.AspnetCore.Tests", "HttpHmacAuthentication.AspnetCore.Tests\HttpHmacAuthentication.AspnetCore.Tests.csproj", "{72114BBE-A767-4466-854C-141573993323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHmacAuthentication.AspnetCore.Tests", "HttpHmacAuthentication.AspnetCore.Tests\HttpHmacAuthentication.AspnetCore.Tests.csproj", "{72114BBE-A767-4466-854C-141573993323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHmacAuthentication.AspnetCore.Sample", "HttpHmacAuthentication.AspnetCore.Sample\HttpHmacAuthentication.AspnetCore.Sample.csproj", "{4A19A32E-EDE3-45D3-95FF-82022AE21914}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{2B692E9C-D014-4392-A44B-0C72AE8EA277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B692E9C-D014-4392-A44B-0C72AE8EA277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B692E9C-D014-4392-A44B-0C72AE8EA277}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CDD8369-6B43-4258-AB37-016295F3F28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CDD8369-6B43-4258-AB37-016295F3F28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CDD8369-6B43-4258-AB37-016295F3F28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CDD8369-6B43-4258-AB37-016295F3F28E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72114BBE-A767-4466-854C-141573993323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72114BBE-A767-4466-854C-141573993323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72114BBE-A767-4466-854C-141573993323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72114BBE-A767-4466-854C-141573993323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A19A32E-EDE3-45D3-95FF-82022AE21914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A19A32E-EDE3-45D3-95FF-82022AE21914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A19A32E-EDE3-45D3-95FF-82022AE21914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A19A32E-EDE3-45D3-95FF-82022AE21914}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

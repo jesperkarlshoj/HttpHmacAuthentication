@@ -6,7 +6,7 @@ using System.Web;
 
 [assembly: InternalsVisibleTo("HttpHmacAuthentication.Tests")]
 
-namespace HttpHmacAuthentication.HttpClient
+namespace HttpHmacAuthentication
 {
     public class HmacAuthenticationDelegatingHanlder : DelegatingHandler
     {

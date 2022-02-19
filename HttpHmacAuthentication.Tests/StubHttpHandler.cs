@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HttpHmacAuthentication.HttpClient.Tests
+namespace HttpHmacAuthentication.Tests
 {
     public class StubHttpHandler : DelegatingHandler
     {

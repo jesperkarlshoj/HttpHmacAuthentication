@@ -1,4 +1,4 @@
-﻿namespace HttpHmacAuthentication.HttpClient.Tests
+﻿namespace HttpHmacAuthentication.Tests
 {
     public class StubTimeProvider : ITimeProvider
     {

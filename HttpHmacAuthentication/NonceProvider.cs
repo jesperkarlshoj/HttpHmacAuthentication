@@ -1,5 +1,5 @@
 ﻿
-namespace HttpHmacAuthentication.HttpClient
+namespace HttpHmacAuthentication
 {
     internal class NonceProvider : INonceProvider
     {
