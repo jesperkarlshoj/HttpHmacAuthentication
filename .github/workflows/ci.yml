@@ -28,7 +28,7 @@ jobs:
       uses: coverallsapp/github-action@v1.1.2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./HttpHmacAuthentication.HttpClient.Tests/TestResults/coverage.info   
+        path-to-lcov: ./HttpHmacAuthentication.Tests/TestResults/coverage.info   
         flag-name: HttpHmacAuthentication.HttpClient.Tests
         parallel: true
     - name: Publish coverage report to coveralls.io
