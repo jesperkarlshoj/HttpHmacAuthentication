@@ -1,7 +1,12 @@
-﻿using System.Net.Http.Headers;
+﻿using System;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 
 [assembly: InternalsVisibleTo("HttpHmacAuthentication.Tests")]
@@ -59,7 +64,7 @@ namespace HttpHmacAuthentication
             if(request.Content != null)
             {
                 SHA256 sha256 = new SHA256Managed();
-                var checksum = sha256.ComputeHash(request.Content.ReadAsStream());
+                var checksum = sha256.ComputeHash(await request.Content.ReadAsStreamAsync());
                 contentSha = Convert.ToBase64String(checksum);
             }
 
@@ -76,7 +81,7 @@ namespace HttpHmacAuthentication
                (signableHeaders.Length == 0 ? "" : (AdditionalSignedHeaderNames.ToLower() ))  +
                timestamp;
 
-            if (!string.IsNullOrEmpty(contentSha))
+            if (!string.IsNullOrEmpty(contentSha) && request.Content != null)
             {
                 StringToSign +=
                     LineBreak +

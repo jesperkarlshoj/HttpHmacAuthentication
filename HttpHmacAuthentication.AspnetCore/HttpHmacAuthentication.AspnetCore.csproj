@@ -1,16 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<IsPackable>true</IsPackable>
+		<PackageTags>hcmac,httpclient,authentication</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<TreatSpecificWarningsAsErrors />
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
+	<PropertyGroup>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>jesperkarlshoj</Authors>
+		<PackageId>$(Authors).$(AssemblyName)</PackageId>
+		<Product>$(Authors).$(AssemblyName)</Product>
+		<RepositoryUrl>https://github.com/jesperkarlshoj/HttpHmacAuthentication</RepositoryUrl>
+		<Description>C# Implementation of Acquia HTTP HMAC as a HTTP client handler.</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
 
 </Project>

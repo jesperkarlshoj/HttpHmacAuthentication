@@ -13,11 +13,13 @@
 
 	<PropertyGroup>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>jesperkarlshoj</Authors>
 		<PackageId>$(Authors).$(AssemblyName)</PackageId>
 		<Product>$(Authors).$(AssemblyName)</Product>
-		<RepositoryUrl>https://github.com/jesperkarlshoj/HttpHmacAuthentication</RepositoryUrl>
-		<Description>C# Implementation of Acquia HTTP HMAC as a HTTP client handler.</Description>
+		<PackageProjectUrl>https://github.com/jesperkarlshoj/HttpHmacAuthentication</PackageProjectUrl>
 	</PropertyGroup>
 </Project>

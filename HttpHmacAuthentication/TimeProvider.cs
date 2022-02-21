@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace HttpHmacAuthentication
 {
     internal class TimeProvider : ITimeProvider

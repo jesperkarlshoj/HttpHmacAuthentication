@@ -3,11 +3,15 @@ using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Net.Http.Headers;
+using System;
+using System.IO;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace HttpHmacAuthentication.AspnetCore
@@ -15,7 +19,7 @@ namespace HttpHmacAuthentication.AspnetCore
     public class HmacAuthenticationHandler : AuthenticationHandler<HmacAuthenticationSchemeOptions>
     {
         public const string AuthScheme = "acquia-http-hmac";
-        private const string TokenRegex = $"{AuthScheme} (?<token>.*)";
+        private const string TokenRegex = "acquia-http-hmac (?<token>.*)";
         private const string LineBreak = "\n";
         private const string Version = "2.0";
 
@@ -64,6 +68,7 @@ namespace HttpHmacAuthentication.AspnetCore
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex, "Unknown authentication error");
                 return Task.FromResult(AuthenticateResult.Fail("Failed"));
             }
             
@@ -185,7 +190,7 @@ namespace HttpHmacAuthentication.AspnetCore
             throw new Exception("Failed");
         }
 
-        private static string URLEncode(string data)
+        private static string URLEncode(string? data)
         {
             return HttpUtility.UrlPathEncode(data).Replace(";", "%3B");
         }
