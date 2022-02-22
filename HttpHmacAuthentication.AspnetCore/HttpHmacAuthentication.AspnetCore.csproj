@@ -13,7 +13,6 @@
 
 	<PropertyGroup>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>jesperkarlshoj</Authors>
 		<PackageId>$(Authors).$(AssemblyName)</PackageId>
 		<Product>$(Authors).$(AssemblyName)</Product>
